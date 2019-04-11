@@ -1,4 +1,4 @@
-package com.luv2code.springdemo;
+package com.luv2code.springdemo.xmlconfig;
 
 public class TrackCoach implements Coach
 {
@@ -18,5 +18,13 @@ public class TrackCoach implements Coach
     public String getDailyFortune()
     {
         return "Just do it!" + fortuneService.getFortune();
+    }
+
+    public void doMyStartupStuff() {
+        System.out.println("TrackCoach: inside method doMyStartupStuff");
+    }
+
+    public void doMyCleanupStuff() {
+        System.out.println("TrackCoach: inside method doMyCleanupStuff YoYo!");
     }
 }
