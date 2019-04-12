@@ -14,8 +14,9 @@ public class AnnotationBeanScopeDemoApp
         boolean result = busDriver == truckDriver;
 
         System.out.println("\nPointing to the same object " + result);
-        System.out.println("\nMemory location for coach " + busDriver);
-        System.out.println("\nMemory location for alphaCoach " + truckDriver );
+        System.out.println("\nMemory location for busDriver " + busDriver);
+        System.out.println("\nMemory location for truckDriver " + truckDriver );
+        System.out.println("\ntruckDriver fortune - " + truckDriver.getDailyFortune() );
 
         context.close();
     }

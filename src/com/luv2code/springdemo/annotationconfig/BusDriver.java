@@ -5,8 +5,11 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 @Component
-@Scope("prototype")
+@Scope("singleton")
 public class BusDriver implements Driver
 {
     private FortuneService fortuneService;
@@ -15,6 +18,17 @@ public class BusDriver implements Driver
     {
         System.out.println("Inside bus constructor!");
     }
+
+    @PostConstruct
+    public void doMyStartupStuff(){
+        System.out.println("\n>> BusDriver: inside doMyStartupStuff");
+    }
+
+    @PreDestroy
+    public void doMyCleanupStuff(){
+        System.out.println("\n>> BusDriver: inside doMyCleanupStuff");
+    }
+
 
     @Override
     public String getDailyWorkout()
