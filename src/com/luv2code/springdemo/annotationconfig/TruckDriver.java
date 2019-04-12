@@ -5,35 +5,21 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
-public class BusDriver implements Driver
+public class TruckDriver implements Driver
 {
+    @Autowired
+    @Qualifier("happyFortuneService")
     private FortuneService fortuneService;
-
-    public BusDriver()
-    {
-        System.out.println("Inside bus constructor!");
-    }
 
     @Override
     public String getDailyWorkout()
     {
-        return "Transfer people to the work.";
+        return "Drive a big truck MAN.";
     }
 
     @Override
     public String getDailyFortune()
     {
         return fortuneService.getFortune();
-    }
-
-    public FortuneService getFortuneService()
-    {
-        return fortuneService;
-    }
-
-    @Autowired
-    public void setFortuneService( @Qualifier( "randomFortuneService" ) FortuneService fortuneService )
-    {
-        this.fortuneService = fortuneService;
     }
 }

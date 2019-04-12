@@ -16,6 +16,6 @@ public class HappyFortuneService implements FortuneService
     public String getFortune()
     {
         Random random = new Random();
-        return fortunes[random.nextInt( 3 )];
+        return fortunes[random.nextInt( fortunes.length )];
     }
 }
