@@ -11,6 +11,7 @@ public class AnnotationDemoApp
         Driver sillyDriver = context.getBean( "sportDriver", Driver.class );
 
         System.out.println(sillyDriver.getDailyWorkout());
+        System.out.println(sillyDriver.getDailyFortune());
 
         context.close();
     }
